@@ -23,28 +23,20 @@ export class DataStorageService {
     }
 
     fetchRecipes() {
-        return this.authService.user.pipe(
-            take(1), 
-            exhaustMap(user => {
-                return this.http.get<Recipe[]>(
-                    'https://recipe-shopping-app-c70a7.firebaseio.com/recipes.json',
-                    {
-                        params: new HttpParams().set('auth', user.token)
-                    }
-                );
-            }),
+        return this.http.get<Recipe[]>(
+            'https://recipe-shopping-app-c70a7.firebaseio.com/recipes.json',
+        )
+        .pipe(
             map(recipes => {  //rxjs map operator
                 return recipes.map(recipe => { //javascript map
                     return {...recipe, ingredients: recipe.ingredients ? recipe.ingredients : []};
-                })  
+                });
             }),
             tap(recipes => {
                 this.recipeService.setRecipes(recipes);
                 console.log('fetched:')
                 console.log(recipes);
             })
-        );
-        
-            
+        );  
     }
 }
