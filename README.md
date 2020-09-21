@@ -22,7 +22,7 @@
 ![Alt text](/screenshots/sc7.png?raw=true "New recipe add")
 ![Alt text](/screenshots/sc8.png?raw=true "New recipe in recipe list")
 ![Alt text](/screenshots/sc9.png?raw=true "Shopping list with added ingredients")
-![Alt text](/screenshots/sc2.png?raw=true "Shopping list ingredient update")
+![Alt text](/screenshots/sc10.png?raw=true "Shopping list ingredient update")
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8.
 
